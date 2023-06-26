@@ -29,16 +29,16 @@ function Slider() {
                 <div style={ { position: 'relative' } }>
                     <SplideTrack>
                         <SplideSlide>
-                            <img src="https://picsum.photos/1000/500" alt="" className='img-fluid' />
+                            <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2171_20230622135818.png/format:webp" alt="" className='img-fluid' />
                         </SplideSlide>
                         <SplideSlide>
-                           <img src="https://picsum.photos/1000/500" alt="" className='img-fluid' />
+                           <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2152_20230425113218.jpeg/format:webp" alt="" className='img-fluid' />
                         </SplideSlide>
                         <SplideSlide>
-                            <img src="https://picsum.photos/1000/500" alt="" className='img-fluid' />
+                            <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2105_20230619121500.jpeg/format:webp" alt="" className='img-fluid' />
                         </SplideSlide>
                         <SplideSlide>
-                            <img src="https://picsum.photos/1000/500" alt="" className='img-fluid' />
+                            <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2116_20210927141630.png/format:webp" alt="" className='img-fluid' />
                         </SplideSlide>
                     </SplideTrack>
                 </div>
@@ -49,7 +49,7 @@ function Slider() {
                 </Splide>
             </div>
             <div className="col-12 col-lg-6 col-xl-6 p-4 text-center">
-                <img src="https://picsum.photos/1000/500" alt="" className='img-fluid h-100' />
+                <img src="https://images.hepsiburada.net/banners/s/0/672-378/bannerImage2110_20230609112703.jpeg/format:webp" alt="" className='img-fluid h-100' />
             </div>
         </div>
       </div>

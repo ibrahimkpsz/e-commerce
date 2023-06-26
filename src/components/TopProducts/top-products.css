@@ -1,0 +1,16 @@
+.tp-title {
+    font-weight: 800 !important;
+    color: #3F72AF;
+    padding-bottom: 20px;
+}
+
+.card-img-top {
+    max-width: 100% !important;
+
+}
+
+.card img {
+    margin: auto;
+    width: 200px !important;
+    height: 200px !important;
+}
