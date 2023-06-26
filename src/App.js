@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Slider from './components/Slider/Slider';
 import TopProducts from './components/TopProducts/TopProducts';
+import Categories from './components/Categories/Categories';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -15,6 +16,7 @@ function App() {
       <Navbar />
       <Slider />
       <TopProducts />
+      <Categories />
     </>
   );
 }

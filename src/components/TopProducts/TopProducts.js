@@ -39,10 +39,10 @@ function TopProducts() {
                         </div>
                         <div className="card-footer d-flex align-items-center justify-content-between">
                             <div><b>Price:</b> {product.price}&#36;</div>
-                            <a href="#" className='btn btn-success'>Buy</a>
+                            <a href="#" className='btn buy-btn'>Buy</a>
                         </div>
                     </div>
-                    </div>
+                </div>
                 )
                 }
             </div>

@@ -4,6 +4,15 @@
     padding-bottom: 20px;
 }
 
+hr {
+    opacity: .1;
+}
+
+.card {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 0;
+}
+
 .card-img-top {
     max-width: 100% !important;
 
@@ -13,4 +22,15 @@
     margin: auto;
     width: 200px !important;
     height: 200px !important;
+}
+
+.buy-btn {
+    background-color: #112D4E;
+    color: #fff;
+}
+
+.buy-btn:hover {
+    background-color: transparent;
+    color: #112D4E;
+    border: 1px solid #112D4E;
 }
