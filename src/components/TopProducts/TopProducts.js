@@ -3,7 +3,9 @@ import axios from 'axios'
 import './top-products.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Splide,SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import { Link } from 'react-router-dom';
 
 
 
@@ -23,7 +25,10 @@ function TopProducts() {
 
     return (
         <div className='container py-5'>
-            <h2 className='tp-title'>Top Products</h2>
+            <div className='d-flex justify-content-between'>
+                <h2 className='tp-title'>Top Products</h2>
+                <Link to="/products" className='btn h-50'>View All</Link>
+            </div>
             <div className="row row-cols-1 row-cols-lg-4 row-cols-md-2 g-4">
                 {
                 data.sort((a, b) => b.rating.rate - a.rating.rate).slice(0,4).map(product => 
@@ -39,7 +44,7 @@ function TopProducts() {
                         </div>
                         <div className="card-footer d-flex align-items-center justify-content-between">
                             <div><b>Price:</b> {product.price}&#36;</div>
-                            <a href="#" className='btn buy-btn'>Buy</a>
+                            <a href="#" className='btn buy-btn'><FontAwesomeIcon icon={faCartPlus} /></a>
                         </div>
                     </div>
                 </div>

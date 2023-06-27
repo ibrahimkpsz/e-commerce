@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import './categories.css'
+import { Link } from 'react-router-dom';
 
 function Categories() {
 
@@ -21,7 +22,7 @@ function Categories() {
             <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 text-center ">
                 {categories.map((category, index) => (
                     <div className="col">
-                        <a key={index} href="#" className='btn buy-btn p-4 text-capitalize w-100 mt-3'>{category}</a>
+                        <Link key={index} to={`/category/${category}`} className='btn buy-btn p-4 text-capitalize w-100 mt-3'>{category}</Link>
                     </div>
                 ))}
             </div>
