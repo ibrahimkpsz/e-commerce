@@ -11,13 +11,17 @@ function Products() {
   const [data, setData] = useState([]);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  
 
   useEffect(() => {
     const products = async () => {
-      const response = await axios.get("https://fakestoreapi.com/products")
-      setData(response.data)
-    }
+      try {
+        const response = await axios.get("https://fakestoreapi.com/products")
+        setData(response.data)
+      } catch (error) {
+        console.log(error);
+      }
+    };
     
     products();
     
@@ -43,26 +47,22 @@ function Products() {
   // Sort Category
   const categories = data.map(product => product.category);
   const uniqueCategories = [... new Set(categories)]
-
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const filteredCategory = data.filter(product => (product.category === selectedCategory));
-  const product_title = document.querySelectorAll(".card-title");
   
-
   
   // Search
-  const handleSearch = (e) => {
-    const searchValue = e.target.value.toLowerCase();
-    product_title.forEach((title) => {
-      const parentElement = title.parentElement.parentElement.parentElement;
-      parentElement.classList.remove("d-block");
-      parentElement.classList.remove("d-none");
 
-      if(title.innerHTML.toLowerCase().includes(searchValue)) {
-        parentElement.classList.add("d-block")
-      } else {
-        parentElement.classList.add("d-none")
-      }
-    })
+  const [searchValue, setSearchValue] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState(data);
+
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value.toLowerCase());
+    const filteredProducts = data.filter((product) =>
+      product.title.toLowerCase().includes(searchValue)
+    );
+    setFilteredProducts(filteredProducts)
+
   }
   
   
@@ -135,6 +135,8 @@ function Products() {
           ? sortedProducts
           : filteredCategory.length > 0
           ? filteredCategory
+          : searchValue.length > 0
+          ? filteredProducts
           : data
         ).map((product) => (
           <div className="col">
@@ -154,7 +156,7 @@ function Products() {
                 </div>
           </div>
         )
-        )  
+        ) 
       }
         
       </div>
@@ -163,42 +165,3 @@ function Products() {
 }
 
 export default Products;
-
-// {
-//   data.map(product => 
-//     <div className="col">
-//         <div className="card rounded-0 h-100" key={product.id}>
-//             <img src={product.image} alt={product.title} className='card-img-top img-fluid p-3'/>
-//             <hr />
-//             <div className="card-body">
-//                 <h5 className='card-title text-truncate'>{product.title}</h5>
-//                 <p className='card-text text-truncate'>
-//                     {product.rating.rate} <FontAwesomeIcon icon={faStar} style={{color: "#dbd539",}} />
-//                 </p>
-//             </div>
-//             <div className="card-footer d-flex align-items-center justify-content-between">
-//                 <div><b>Price:</b> {product.price}&#36;</div>
-//                 <a href="#" className='btn buy-btn'><FontAwesomeIcon icon={faCartPlus} /></a>
-//             </div>
-//         </div>
-//     </div>
-//     )
-// }
-// {sortedProducts.map((product) => (
-//   <div className="col">
-//         <div className="card rounded-0 h-100" key={product.id}>
-//             <img src={product.image} alt={product.title} className='card-img-top img-fluid p-3'/>
-//             <hr />
-//             <div className="card-body">
-//                 <h5 className='card-title text-truncate'>{product.title}</h5>
-//                 <p className='card-text text-truncate'>
-//                     {product.rating.rate} <FontAwesomeIcon icon={faStar} style={{color: "#dbd539",}} />
-//                 </p>
-//             </div>
-//             <div className="card-footer d-flex align-items-center justify-content-between">
-//                 <div><b>Price:</b> {product.price}&#36;</div>
-//                 <a href="#" className='btn buy-btn'><FontAwesomeIcon icon={faCartPlus} /></a>
-//             </div>
-//         </div>
-//     </div>
-// ))}
