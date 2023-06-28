@@ -1,6 +1,8 @@
 import React from 'react'
 import './navbar.css'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navbar() {
   return (
@@ -20,7 +22,7 @@ export default function Navbar() {
               <Link className="nav-link" to="/products">Products</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="#">Pricing</Link>
+              <button className="nav-link"><FontAwesomeIcon icon={faCartShopping} /></button>
             </li>
           </ul>
         </div>
