@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import '../styles/products.css'
+import '../styles/pages.css'
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faMagnifyingGlass, faStar } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +12,6 @@ function Products() {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   
-
   useEffect(() => {
     const products = async () => {
       try {
@@ -39,17 +38,13 @@ function Products() {
     return sortedProducts;
   };
   
-  
-
   const sortedProducts = sortProductsByPrice(minPrice, maxPrice);
-
 
   // Sort Category
   const categories = data.map(product => product.category);
   const uniqueCategories = [... new Set(categories)]
   const [selectedCategory, setSelectedCategory] = useState(null);
   const filteredCategory = data.filter(product => (product.category === selectedCategory));
-  
   
   // Search
 
@@ -62,11 +57,9 @@ function Products() {
       product.title.toLowerCase().includes(searchValue)
     );
     setFilteredProducts(filteredProducts)
-
   }
   
-  
-  
+
   return (
     <div className='container pb-5'>
       <div className='d-flex justify-content-between align-items-center'>
@@ -158,7 +151,6 @@ function Products() {
         )
         ) 
       }
-        
       </div>
     </div>
   )

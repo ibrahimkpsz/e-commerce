@@ -8,3 +8,11 @@
 select,option {
     text-transform: capitalize;
 }
+
+.categories-title {
+    font-weight: 800 !important;
+    color: #3F72AF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+}

@@ -1,5 +1,6 @@
 .categories-title {
     font-weight: 800 !important;
     color: #3F72AF;
+    text-transform: capitalize;
     padding-bottom: 20px;
 }
