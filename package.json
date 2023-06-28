@@ -1,7 +1,7 @@
 {
   "name": "ecommerce",
   "version": "0.1.0",
-  "homepage": "https://ibrahimkpsz.github.io/ecommerce",
+  "homepage": "https://ibrahimkpsz.github.io/e-commerce",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
